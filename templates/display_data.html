@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient List</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style1.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Patient List</h1>
+    <div style="display: flex; justify-content: flex-end; align-items: center">
+      <a href="/">View Form</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Date</th>
+          <th>Class</th>
+          <th>Number of Seats</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in bookings %}
+        <tr>
+          <td>{{ booking[0] }}</td>
+          <td>{{ booking[1] }}</td>
+          <td>{{ booking[2] }}</td>
+          <td>{{ booking[3] }}</td>
+          <td>{{ booking[4] }}</td>
+          <td>{{ booking[5] }}</td>
+          <td>{{ booking[6] }}</td>
+          <td>{{ booking[7] }}</td>
+          <td>{{ booking[8] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
